@@ -1,0 +1,11 @@
+function FindProxyForURL(url, host) {
+  if (
+    shExpMatch(host, "*.pubgmobile.com") ||
+    shExpMatch(host, "*.tencentgames.com") ||
+    shExpMatch(host, "*.igamecj.com") ||
+    shExpMatch(host, "*.qcloud.com")
+  ) {
+    return "DIRECT";
+  }
+  return "PROXY 37.34.92.74:12323; DIRECT";
+}
