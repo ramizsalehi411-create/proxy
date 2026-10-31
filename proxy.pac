@@ -1,1 +1,15 @@
-function FindProxyForURL(url,host){if(shExpMatch(host,"*icanhazip.com")||shExpMatch(host,"*.pubgmobile.com")||shExpMatch(host,"*.tencentgames.com")||shExpMatch(host,"*.igamecj.com")||shExpMatch(host,"*.qcloud.com")||shExpMatch(host,"*.pubg.com")||shExpMatch(host,"*.proximabeta.com")){return"SOCKS5 193.43.104.134:1080";}return"DIRECT";}
+function FindProxyForURL(url, host) {
+  // فقط پابجی و بازی ها از پروکسی فرانسه بره، بقیه اینترنت مستقیم
+  if (
+      shExpMatch(host, "*pubg*") ||
+      shExpMatch(host, "*pubgm*") ||
+      shExpMatch(host, "*tencent*") ||
+      shExpMatch(host, "*proximabeta*") ||
+      shExpMatch(host, "*igame*") ||
+      shExpMatch(host, "*qcloud*")
+     ) {
+    return "PROXY geo.iproyal.com:11200";
+  }
+  // بقیه سایت ها مثل یوتیوب، گوگل مستقیم
+  return "DIRECT";
+}
