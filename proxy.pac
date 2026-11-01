@@ -1,3 +1,3 @@
 function FindProxyForURL(url, host) {
-  return "PROXY geo.iproyal.com:11200";
+  return "SOCKS5 geo.iproyal.com:11200; PROXY geo.iproyal.com:11200; DIRECT";
 }
